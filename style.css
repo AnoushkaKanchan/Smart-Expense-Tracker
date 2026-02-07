@@ -1,0 +1,317 @@
+/* =====================
+   DESIGN TOKENS
+===================== */
+:root {
+  --bg-main: #f7f8fa;
+  --card-bg: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+
+  --accent: #4f8df7;
+  --success: #4caf50;
+  --warning: #f5b942;
+  --danger: #e57373;
+
+  --border-soft: #e5e7eb;
+  --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+:root {
+  --primary: var(--accent);
+  --border: var(--border-soft);
+  --card: var(--card-bg);
+  --muted: var(--text-secondary);
+  --primary-soft: #eef4ff;
+  --text: var(--text-primary);
+}
+ 
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  color: var(--text-primary);
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+  padding: 20px;
+}
+
+.balance-main {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.balance-positive {
+  color: var(--success);
+}
+
+.balance-negative {
+  color: var(--danger);
+}
+
+.balance-main.text-success {
+  color: #3f8f5f;
+}
+
+.balance-main.text-danger {
+  color: #b94a48;
+}
+
+
+/* =====================
+   HEADINGS
+===================== */
+h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+/* =====================
+   CARD SECTIONS
+===================== */
+.snapshot,
+.insights,
+.alerts,
+form,
+section {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+/* =====================
+   INPUTS & BUTTONS
+===================== */
+input,
+select,
+button {
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #3b78e7;
+}
+.btn-outline-primary,
+.btn-outline-danger {
+  border-radius: 8px;
+}
+
+
+/* =====================
+   SNAPSHOT NUMBERS
+===================== */
+.snapshot p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.snapshot span {
+  font-weight: 600;
+}
+
+/* =====================
+   EXPENSE LIST
+===================== */
+
+/* FORCE expense row into single line */
+#expense-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Make text flexible, not full-width */
+#expense-list li span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Keep buttons side-by-side */
+#expense-list li button {
+  flex-shrink: 0;
+}
+
+
+/* =====================
+   INSIGHTS
+===================== */
+#dash-insight {
+  background: var(--primary-soft);
+  border-left: 4px solid var(--primary);
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* =====================
+   ALERTS (CALM, NOT SCARY)
+===================== */
+#alerts-list .alert {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  font-size: 14px;
+}
+.alert-warning {
+  background-color: #fff6e5;
+  border-left: 4px solid var(--warning);
+  color: #8a6d1d;
+}
+
+/* =====================
+   NEGATIVE VALUES
+===================== */
+.negative {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  .card {
+    padding: 14px;
+  }
+
+  .balance-main {
+    font-size: 1.8rem;
+  }
+}
+
+  #expense-list li {
+    align-items: flex-start;
+  }
+
+
+
+/*SMOOTH “POP” EFFECT*/
+
+.report-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+  background-color: #f8f9fb;
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#goals-list .list-group-item {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e9ecef;
+}
+
+#expense-list .list-group-item {
+  border-radius: 8px;
+  margin-bottom: 6px;
+  border: 1px solid #e9ecef;
+}
+
+/* ===== Category Pie Chart ===== */
+
+
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;   /* 👈 cap size */
+  height: 260px;      /* 👈 FIXED height (important) */
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .chart-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+}
+#categoryPie {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#clear-all-btn {
+  opacity: 0.85;
+}
+
+#clear-all-btn:hover {
+  opacity: 1;
+}
+
+#clear-month-btn{
+  opacity: 0.85;
+}
+
+#clear-month-btn:hover {
+  opacity: 1;
+}
