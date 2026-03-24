@@ -29,5 +29,5 @@ Future Improvements
 - User authentication
 
 Live Demo
-https://AnoushkaKanchan.github.io/expense-tracker/
+https://anoushkakanchan.github.io/Smart-Expense-Tracker/
 
